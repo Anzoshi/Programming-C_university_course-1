@@ -19,13 +19,9 @@ int main(int argc, const char * argv[])
     unsigned int* ptRy = &y;
     assert(ptRy != NULL);
 
-
     riempiMat(mat);
 
-    minimo(mat, nomefile, &x, &y);
-
-
-
+    minimo(mat, nomefile, ptRx, ptRy); // u can call pointers even just typing &x, &y. There is no need to declare other pointers in the main.
 
     return 0;
 }
@@ -110,11 +106,6 @@ void minimo (const int mat[r][c], char nomefile[], unsigned int* x, unsigned int
     fprintf(f,"%c", ']');
 
     printf("\n%s\t%u%s%u\t", "le coordinate del minimo sono: ", *x, ", ", *y);
-
-
-
-
-
 
     fclose(f);
 
