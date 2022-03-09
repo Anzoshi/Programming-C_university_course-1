@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void insertNum (int a, int b, int c);
+void insertNum (int* a, int* b, int* c);
 void printCalc (int a, int b, int c);
 
 int main(int argc, const char* argv[])
@@ -9,7 +9,7 @@ int main(int argc, const char* argv[])
     int b;
     int c;
 
-    insertNum(a, b, c);
+    insertNum(&a, &b, &c);
     printCalc(a, b, c);
 
 
@@ -20,16 +20,16 @@ int main(int argc, const char* argv[])
     return 0;
 }
 
-void insertNum (int a, int b, int c)
+void insertNum (int* a, int* b, int* c)
 {
     puts("inserisci il primo numero: ");
-    scanf("%d", &a);
+    scanf("%d", a);
 
     puts("inserisci il secondo numero: ");
-    scanf("%d", &b);
+    scanf("%d", b);
 
     puts("inserisci il terzo numero: ");
-    scanf("%d", &c);
+    scanf("%d", c);
 
     return;
 }
